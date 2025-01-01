@@ -23,13 +23,13 @@ This project is a base template for a bot that automatically transfers tokens be
    git clone https://github.com/lizkyyy/bot-auto-transfer-base.git
 
 2. Navigate into the project directory:
-```bash
-cd bot-auto-transfer-base
+   ```bash
+   cd bot-auto-transfer-base
 
 
 3. Install the required Python libraries:
-
-pip install -r requirements.txt
+   ```bash
+   pip install -r requirements.txt
 
 
 4. Add your wallet details and Alchemy API URL in config.py.
@@ -39,7 +39,7 @@ pip install -r requirements.txt
 Configuration
 
 Open config.py and modify the following variables with your Ethereum wallet addresses and private keys, as well as your Alchemy API URL:
-
+```bash
 ALCHEMY_URL = "your-alchemy-url"
 ADDRESS_1 = "your-first-wallet-address"
 PRIVATE_KEY_1 = "your-first-wallet-private-key"
@@ -51,7 +51,7 @@ Make sure to replace "your-alchemy-url", "your-first-wallet-address", and the co
 Usage
 
 Run the bot script to begin transferring tokens:
-
+```bash
 python bot_transfer.py
 
 The bot will automatically start transferring tokens between the two configured addresses, with custom delays and transfer amounts.
@@ -67,7 +67,7 @@ This bot performs real Ethereum transactions. Ensure that you have sufficient fu
 Requirements
 
 Make sure to install the required libraries by using the requirements.txt file. Run the following command in the project directory:
-
+```bash
 pip install -r requirements.txt
 
 This `README.md` includes all the details for your project and also mentions the installation of dependencies through `requirements.txt`.
