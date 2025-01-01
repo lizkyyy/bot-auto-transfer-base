@@ -2,7 +2,7 @@ import requests
 from web3 import Web3
 from config import ALCHEMY_URL
 
-# Initialize Web3 connection
+# Initialize Web3 connection for Base Network
 w3 = Web3(Web3.HTTPProvider(ALCHEMY_URL))
 
 if not w3.is_connected():
@@ -10,9 +10,9 @@ if not w3.is_connected():
 
 def get_current_gas_price():
     """
-    Fetches the current gas price from BaseScan with fallback to Web3's default gas price.
+    Fetches the current gas price from BaseScan (Base network's explorer) with fallback to Web3's default gas price.
     """
-    BASESCAN_API_KEY = "YOUR_BASESCAN_API_KEY"  # Replace with your actual BaseScan API key
+    BASESCAN_API_KEY = "YOUR_BASESCAN_API_KEY"  # Replace with BaseScan API key
     url = f'https://api.basescan.org/api?module=gastracker&action=gasoracle&apikey={BASESCAN_API_KEY}'
 
     try:
@@ -36,10 +36,11 @@ def get_current_gas_price():
 
 def get_token_contract(token_address):
     """
-    Returns a token contract object for interacting with the Base network.
+    Returns a token contract object for interacting with the token on Base network.
     """
     # Ensure token address is in checksum format
     token_address = Web3.to_checksum_address(token_address)
+    print(f"Token address in checksum format: {token_address}")  # Debugging line
     
     TOKEN_ABI = [
         {"constant": True, "inputs": [], "name": "decimals", "outputs": [{"name": "", "type": "uint8"}], "type": "function"},
@@ -50,10 +51,11 @@ def get_token_contract(token_address):
 
 def get_balance(address, token_address):
     """
-    Retrieves the token balance of an address on the Base network.
+    Retrieves the token balance of an address on Base network.
     """
     # Ensure address is in checksum format
     address = Web3.to_checksum_address(address)
+    print(f"Address in checksum format: {address}")  # Debugging line
     
     token_contract = get_token_contract(token_address)
     balance = token_contract.functions.balanceOf(address).call()
@@ -64,12 +66,16 @@ def get_balance(address, token_address):
 
 def transfer_token(sender_private_key, sender_address, token_address, receiver_address, amount):
     """
-    Executes a token transfer on the Base network with dynamic gas price.
+    Executes a token transfer with dynamic gas price for Base network.
     """
     # Ensure all addresses are in checksum format
     sender_address = Web3.to_checksum_address(sender_address)
     receiver_address = Web3.to_checksum_address(receiver_address)
     token_address = Web3.to_checksum_address(token_address)
+
+    print(f"Sender address in checksum format: {sender_address}")  # Debugging line
+    print(f"Receiver address in checksum format: {receiver_address}")  # Debugging line
+    print(f"Token address in checksum format: {token_address}")  # Debugging line
 
     token_contract = get_token_contract(token_address)
 
