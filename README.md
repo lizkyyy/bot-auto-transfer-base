@@ -23,7 +23,7 @@ This project is a base template for a bot that automatically transfers tokens be
    git clone https://github.com/lizkyyy/bot-auto-transfer-base.git
 
 2. Navigate into the project directory:
-
+```bash
 cd bot-auto-transfer-base
 
 
