@@ -50,19 +50,17 @@ Run the bot script to begin transferring tokens:
 
 The bot will automatically start transferring tokens between the two configured addresses, with custom delays and transfer amounts.
 
-License
+• License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Disclaimer
+• Disclaimer
 
 This bot performs real Ethereum transactions. Ensure that you have sufficient funds in your wallet to cover transaction fees, and use it responsibly to avoid any unintended transfers or loss of funds.
 
-Requirements
+• Requirements
 
 Make sure to install the required libraries by using the requirements.txt file. Run the following command in the project directory:
    ```bash
    pip install -r requirements.txt
-
-This `README.md` includes all the details for your project and also mentions the installation of dependencies through `requirements.txt`.
 
