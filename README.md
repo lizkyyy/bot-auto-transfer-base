@@ -34,11 +34,11 @@ This project is a base template for a bot that automatically transfers tokens be
 
 4. Add your wallet details and Alchemy API URL in config.py:
    ```bash
-ALCHEMY_URL = "your-alchemy-url"
-ADDRESS_1 = "your-first-wallet-address"
-PRIVATE_KEY_1 = "your-first- wallet-private-key"
-ADDRESS_2 = "your-second-wallet-address"
-PRIVATE_KEY_2 = "your-second-wallet-private-key"
+   ALCHEMY_URL = "your-alchemy-url"
+   ADDRESS_1 = "your-first-wallet-address"
+   PRIVATE_KEY_1 = "your-first- wallet-private-key"
+   ADDRESS_2 = "your-second-wallet-address"
+   PRIVATE_KEY_2 = "your-second-wallet-private-key"
 
 Make sure to replace "your-alchemy-url", "your-first-wallet-address", and the corresponding private keys with the correct values.
 
