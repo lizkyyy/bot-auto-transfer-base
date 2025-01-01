@@ -47,5 +47,3 @@ Usage
 Run the bot script to begin transferring tokens:
    ```bash
    python bot_transfer.py
-
-## The bot will automatically start transferring tokens between the two configured addresses, with custom delays and transfer amounts.
