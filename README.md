@@ -46,4 +46,4 @@ Usage
 
 Run the bot script to begin transferring tokens:
    ```bash
-   python bot_transfer.py
+   python main.py
